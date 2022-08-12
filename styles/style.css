@@ -1,0 +1,116 @@
+/*Roboto font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&family=Roboto:wght@100;300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-background: #F0F0F7;
+    --color-primary: #0671CC;
+    --color-primary-light: #039CE5;
+    --color-primary-dark: #144EB7;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #000000;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+    font-size: 60%; /*Controle das medias rem*/
+}
+
+body {
+    background-color: var(--color-background);
+    
+    height: 100vh;
+}
+
+#container {
+    max-width: 100%;
+}
+
+main {
+    margin: -3.2rem auto 3.2rem auto;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: var(--color-box-base);
+    border-radius: .8rem;
+}
+
+body .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
+
+body,
+input,
+button {
+    font: 500 1.6rem Poppins;
+    color: var(--color-text-base);
+    
+    
+}
+
+input, button {
+    width: 90%;
+    margin: .5rem auto;
+}
+
+.button {
+    width: 10rem;
+    height: 3.6rem;
+    background-color: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    text-decoration: none;
+
+    transition: background .2s;
+}
+
+.button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+
+#logoContainer img {
+    max-width: 100%;
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 62.5%; /*Todo 1 vai ser relativo a 10px*/
+    }
+
+    body #container {
+        max-width: 100vw;
+    }
+
+    body .page-header .header-content {
+        margin-bottom: 0;
+    }
+
+    main {
+        padding: 32px 0;
+        max-width: 740px;
+        margin: -3.2rem auto 3.2rem auto;
+
+    }
+}
