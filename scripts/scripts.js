@@ -6,7 +6,7 @@ const lastResults = [];
 const lastResultsWrap = document.getElementById('lastResultsWrap');
 let sum = 0;
 
-calculateLomb1.addEventListener('click', () => {
+/*calculateLomb1.addEventListener('click', () => {
     let lomb1Tare = document.getElementById('lomb1Tare').value;
     let lomb1Weight = document.getElementById('lomb1Weight').value;
     let pieceWeight = lomb1Weight - lomb1Tare;
@@ -86,7 +86,36 @@ calculateLomb3.addEventListener('click', () => {
         lastResults.push(pieceWeight);
         lastResultsWrap.innerHTML = lastResults;
     };
-});
+});*/
+
+//Optimizing PRONTO, FAZER ATUALIZAÇÃO NO GIT HUB, JÁ ONLINE
+function calculateLomb(event, lomb) {
+    let lombTare = document.getElementById(`${lomb}Tare`).value;
+    let lombWeight = document.getElementById(`${lomb}Weight`).value;
+    let pieceWeight = Math.round((lombWeight - lombTare) * 100) / 100;
+
+    if (lombWeight == 0) {
+        window.alert('Por favor, insira o peso previsto na balança.');
+    } else if (lombTare == 0) {
+        if (confirm(`O lombador ${lomb.slice(-1)} está sem tara, deseja continuar?`)){
+            sum += pieceWeight;
+            Math.round(sum * 100) / 100;
+            result.innerText = `${sum}KG`;
+            document.getElementById(`${lomb}Weight`).value
+            //Array storing action
+            lastResults.push(pieceWeight);
+            lastResultsWrap.innerHTML = lastResults;
+        } else {window.alert('A operação foi cancelada!')};
+    } else {
+        sum += pieceWeight;
+        sum = Math.round(sum * 100) / 100;
+        result.innerText = `${sum}KG`;
+        document.getElementById(`${lomb}Weight`).value
+        //Array storing action
+        lastResults.push(pieceWeight);
+        lastResultsWrap.innerHTML = lastResults;
+    };
+}
 
 //Removing action
 const removeAll = document.getElementById('removeAll');
