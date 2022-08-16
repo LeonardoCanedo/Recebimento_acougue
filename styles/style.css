@@ -56,13 +56,11 @@ body,
 input,
 button {
     font: 500 1.6rem Poppins;
-    color: var(--color-text-base);
-    
-    
+    color: var(--color-text-base);  
 }
 
 input, button {
-    width: 90%;
+    width: 100%;
     margin: .5rem auto;
 }
 
@@ -89,9 +87,20 @@ input, button {
     background-color: var(--color-secondary-dark);
 }
 
-
 #logoContainer img {
     max-width: 100%;
+}
+
+#resultsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+}
+
+#removeAll {
+    margin-top: 1.4rem;
 }
 
 @media (min-width: 700px) {
@@ -108,7 +117,6 @@ input, button {
     }
 
     main {
-        padding: 32px 0;
         max-width: 740px;
         margin: -3.2rem auto 3.2rem auto;
 
